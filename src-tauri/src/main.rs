@@ -53,7 +53,7 @@ use process::ProcessRegistryState;
 fn main() {
     // Initialize logger
     env_logger::init();
-
+    let _ = fix_path_env::fix(); // <---- Add this
     // Check if we need to activate sandbox in this process
     if sandbox::executor::should_activate_sandbox() {
         // This is a child process that needs sandbox activation
